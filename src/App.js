@@ -8,9 +8,11 @@ function App() {
 	const [newBookReview, setNewBookReview] = useState('')
 
 	useEffect(() => {
-		Axios.get('https://cruddatabase-book.herokuapp.com/api/get').then((res) =>
-			setBookReviewList(res.data)
-		)
+		Axios.get('https://cruddatabase-book.herokuapp.com/api/get')
+			.then((res) => setBookReviewList(res.data))
+			.catch((err) => {
+				console.log(err)
+			})
 	}, [])
 	const submitReview = () => {
 		Axios.post('https://cruddatabase-book.herokuapp.com/api/insert', {
