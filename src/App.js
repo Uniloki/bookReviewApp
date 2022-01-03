@@ -8,12 +8,12 @@ function App() {
 	const [newBookReview, setNewBookReview] = useState('')
 
 	useEffect(() => {
-		Axios.get('http://cruddatabase-book.herokuapp.com/api/get').then((res) =>
+		Axios.get('https://cruddatabase-book.herokuapp.com/api/get').then((res) =>
 			setBookReviewList(res.data)
 		)
 	})
 	const submitReview = () => {
-		Axios.post('http://cruddatabase-book.herokuapp.com/api/insert', {
+		Axios.post('https://cruddatabase-book.herokuapp.com/api/insert', {
 			bookName: bookName,
 			bookReview: bookReview,
 		}).then(() => {
@@ -24,10 +24,10 @@ function App() {
 		})
 	}
 	const deleteReview = (book) => {
-		Axios.delete(`http://cruddatabase-book.herokuapp.com/api/delete/${book}`)
+		Axios.delete(`https://cruddatabase-book.herokuapp.com/api/delete/${book}`)
 	}
 	const updateReview = (book) => {
-		Axios.put(`http://cruddatabase-book.herokuapp.com/api/update`, {
+		Axios.put(`https://cruddatabase-book.herokuapp.com/api/update`, {
 			bookName: book,
 			bookReview: newBookReview,
 		})
