@@ -11,7 +11,7 @@ function App() {
 		Axios.get('https://cruddatabase-book.herokuapp.com/api/get').then((res) =>
 			setBookReviewList(res.data)
 		)
-	})
+	}, [])
 	const submitReview = () => {
 		Axios.post('https://cruddatabase-book.herokuapp.com/api/insert', {
 			bookName: bookName,
