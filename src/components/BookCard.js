@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 import StarRating from './StarRating'
+import '../styles/BookCard.css'
+import { MdDelete } from 'react-icons/md'
 function BookCard(book, key) {
 	const [newBookReview, setNewBookReview] = useState('')
 
@@ -15,34 +17,50 @@ function BookCard(book, key) {
 		setNewBookReview('')
 	}
 	return (
-		<div>
-			<div>
-				<h1> {book.book.bookRating} </h1>
-				<h1> {book.book.bookName} </h1>
-				<p> {book.book.bookReview} </p>
+		<div className="book-card">
+			<div className="button-cont">
 				<button
+					className="delete-button"
 					onClick={() => {
 						deleteReview(book.book.id)
 					}}
 				>
-					{' '}
-					Delete{' '}
+					<MdDelete />
 				</button>
+			</div>
+
+			<div className="title-cont">
+				<h1 className="book-title"> {book.book.bookName} </h1>
+			</div>
+			<div className="div-name">
+				<div>
+					<img
+						className="book-image"
+						width={100}
+						alt="book icon"
+						src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png"
+					/>
+				</div>
+				<p className="book-review"> {book.book.bookReview} </p>
 				<input
 					type="text"
 					name="edit"
+					className="edit-input"
 					onChange={(e) => {
 						setNewBookReview(e.target.value)
 					}}
 				/>
-				<button
-					onClick={() => {
-						updateReview(book.book.id)
-					}}
-				>
-					{' '}
-					Update{' '}
-				</button>
+				<div>
+					<button
+						className="edit-button"
+						onClick={() => {
+							updateReview(book.book.id)
+						}}
+					>
+						{' '}
+						Update{' '}
+					</button>
+				</div>
 			</div>
 			<div>
 				<StarRating book={book} />

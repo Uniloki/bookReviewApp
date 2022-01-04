@@ -14,7 +14,7 @@ function CardCont() {
 			})
 	}, [])
 	return (
-		<div>
+		<div className="card-container">
 			{bookReviewList.map((book, index) => {
 				return <BookCard key={index} book={book} />
 			})}

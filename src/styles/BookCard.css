@@ -1,0 +1,64 @@
+.book-card {
+	background-color: #fcfcf7;
+	color: black;
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 25%;
+	padding: 25px;
+	box-shadow: 0 10px 10px -5px;
+	width: 25%;
+	margin: 20px;
+}
+.book-title {
+	font-size: 2rem;
+}
+.book-review {
+	font-size: 20px;
+	font-family: monospace;
+}
+.button-cont {
+	color: red;
+	width: 100%;
+	position: relative;
+}
+.delete-button {
+	color: rgb(68, 68, 68);
+	background-color: #fcfcf7;
+	font-size: 30px;
+	cursor: pointer;
+	width: 0px;
+	border: none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.edit-button {
+	font-family: monospace;
+	display: inline-block;
+	cursor: pointer;
+	font-weight: 500;
+	border: 2px solid rgb(190, 190, 190);
+	border-radius: 10px;
+	height: 36px;
+	line-height: 34px;
+	font-size: 14px;
+	color: #241c15;
+	background-color: #ffffff;
+	transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+	padding: 0 18px;
+}
+.edit-button:hover {
+	color: #241c15;
+	background-color: #d9d7cd;
+}
+.edit-input {
+	margin: 10px;
+}
+.div-name {
+	padding: 20px;
+}
+@media screen and (max-width: 600px) {
+	.book-card {
+		width: 80%;
+	}
+}

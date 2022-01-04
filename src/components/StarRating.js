@@ -35,7 +35,7 @@ const StarRating = (book) => {
 							className="star"
 							color={
 								ratingValue <= (hover || rating || currentBook.bookRating)
-									? 'yellow'
+									? '#fada5e'
 									: 'grey'
 							}
 							size={40}
