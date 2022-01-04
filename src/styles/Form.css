@@ -26,6 +26,10 @@
 	resize: none;
 	border: 2px solid rgb(190, 190, 190);
 }
+.bookRating {
+	font-family: monospace;
+	border: 2px solid rgb(190, 190, 190);
+}
 .submit-button {
 	font-family: monospace;
 	display: inline-block;

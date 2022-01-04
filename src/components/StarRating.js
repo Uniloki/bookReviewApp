@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import '../styles/StarRating.css'
-const StarRating = (ratings) => {
+import Axios from 'axios'
+const StarRating = (book) => {
 	const [rating, setRating] = useState(null)
 	const [hover, setHover] = useState(null)
-	console.log(rating)
+
+	const currentBook = book.book.book
+	const updateRating = (rating) => {
+		setRating(rating)
+		Axios.put(`https://cruddatabase-book.herokuapp.com/api/update/bookRating`, {
+			id: currentBook.id,
+			bookRating: hover,
+		})
+	}
 	return (
 		<div>
 			{[...Array(5)].map((star, i) => {
@@ -15,15 +24,19 @@ const StarRating = (ratings) => {
 						<input
 							type="radio"
 							name="rating"
-							value={ratings}
-							onClick={() => setRating(ratingValue)}
+							value={currentBook.bookRating}
+							onClick={() => {
+								updateRating(ratingValue)
+							}}
 						></input>
 						<FaStar
 							onMouseEnter={() => setHover(ratingValue)}
 							onMouseLeave={() => setHover(null)}
 							className="star"
 							color={
-								ratingValue <= (hover || ratings.ratings) ? 'yellow' : 'grey'
+								ratingValue <= (hover || rating || currentBook.bookRating)
+									? 'yellow'
+									: 'grey'
 							}
 							size={40}
 						/>

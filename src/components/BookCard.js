@@ -45,7 +45,7 @@ function BookCard(book, key) {
 				</button>
 			</div>
 			<div>
-				<StarRating ratings={book.book.bookRating} />
+				<StarRating book={book} />
 			</div>
 		</div>
 	)
