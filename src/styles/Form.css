@@ -1,7 +1,9 @@
 .form-cont {
 	background-color: #faaca8;
 	background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
-
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
 	padding: 20px;
 }
 .form {
@@ -10,27 +12,32 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	width: 25%;
-	padding: 20px;
+	padding: 25px;
 	box-shadow: 0 10px 10px -5px;
 }
 .form div {
 	padding: 20px;
 }
+.bookName {
+	border: 2px solid rgb(190, 190, 190);
+	font-family: monospace;
+}
 .review {
 	resize: none;
+	border: 2px solid rgb(190, 190, 190);
 }
 .submit-button {
+	font-family: monospace;
 	display: inline-block;
-	outline: none;
 	cursor: pointer;
 	font-weight: 500;
-	border: 1px solid transparent;
+	border: 2px solid rgb(190, 190, 190);
 	border-radius: 10px;
 	height: 36px;
 	line-height: 34px;
 	font-size: 14px;
 	color: #241c15;
-	background-color: #fafaff;
+	background-color: #ffffff;
 	transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
 	padding: 0 18px;
 }
@@ -38,6 +45,10 @@
 	color: #241c15;
 	background-color: #d9d7cd;
 }
+.type-cont {
+	height: 100px;
+}
 .Typewriter {
-	font-size: 18px;
+	font-family: monospace;
+	font-size: 25px;
 }

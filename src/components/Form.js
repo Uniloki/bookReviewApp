@@ -5,16 +5,18 @@ import Typewriter from 'typewriter-effect'
 function Form() {
 	const [bookName, setBookName] = useState('')
 	const [bookReview, setBookReview] = useState('')
+	const [bookRating, setBookRating] = useState(null)
 	const [bookReviewList, setBookReviewList] = useState([])
 
 	const submitReview = () => {
 		Axios.post('https://cruddatabase-book.herokuapp.com/api/insert', {
 			bookName: bookName,
 			bookReview: bookReview,
+			bookRating: bookRating,
 		}).then(() => {
 			setBookReviewList([
 				...bookReviewList,
-				{ bookName: bookName, bookReview: bookReview },
+				{ bookName: bookName, bookReview: bookReview, bookRating: bookRating },
 			])
 		})
 	}
@@ -22,7 +24,7 @@ function Form() {
 	return (
 		<div className="form-cont">
 			<div className="form">
-				<div>
+				<div className="type-cont">
 					<Typewriter
 						onInit={(typewriter) => {
 							typewriter.typeString('What would you like to review?').start()
@@ -39,6 +41,18 @@ function Form() {
 						placeholder="Title..."
 						onChange={(e) => {
 							setBookName(e.target.value)
+						}}
+					></input>
+				</div>
+				<div className="rating-input">
+					<label> </label>
+					<input
+						type="text"
+						name="bookRating"
+						className="bookRating"
+						placeholder="Rating..."
+						onChange={(e) => {
+							setBookRating(e.target.value)
 						}}
 					></input>
 				</div>
